@@ -6,15 +6,13 @@ The Data component is further split into three components:
 *  **Schemas**: to declare the database structure
 *  **Migrations**: to modify the database schema
 
-As a starting point we are creating an [Ecto](https://hexdocs.pm/ecto/) adapter for Antidote. This strategy gives us a quick integration, so that developers can start building Elixir applications using our platform. We make the Vax layer contact Antidote directly, bypassing the Vaxine layer (refer [here](https://github.com/vaxine-io/internal/blob/main/design/index.md#architecture) for a complete architecture diagram).  When some of Vaxine's features becomes available, Vax will start talking to the Vaxine layer instead. Don't worry, when that day arrives, the only thing you will have to do to start taking advantage of the new features is change your Ecto adapter and possibly some configurations, and we ensure your applications remains compatible out-of-the-box.
+As a starting point we are creating an [Ecto](https://hexdocs.pm/ecto/) adapter for Antidote protobuf API. This strategy gives us a quick integration, so that developers can start building Elixir applications using our platform. We make the Vax layer contact Antidote directly, bypassing the Vaxine layer (refer [here](https://github.com/vaxine-io/internal/blob/main/design/index.md#architecture) for a complete architecture diagram).  When some of Vaxine's features becomes available, Vax will start talking to the Vaxine layer instead. Don't worry, when that day arrives, the only thing you will have to do is change your Ecto adapter and possibly some configurations, and we ensure your applications remains compatible out-of-the-box.
 
 
 
 ## Query language
 
-Exposing a top-level query interface allows the decoupling between data access and the internal representation of data, providing a common API on which different clients can be built.
-
-It is still an open question wether we will support SQL, a subset of it, or come up with a different data-model/query language. While being SQL-compatible has benefits for adoption, it might also cause some confusion among developers if the system doesn't always behave like other SQL databases due to a different consistency model.
+Exposing a top-level query interface allows the decoupling between data access and the internal representation of data, providing a common API on which different clients can be built. However, the envisioned API departs from most traditional query language protocols in which queries are passed in a serialised form from the client to the server to be executed. We will leverage a more synergic relationship between the client and the server to enable surgical precise operations, that reduce unnecessary writes and avoid coordination whenever possible.
 
 
 

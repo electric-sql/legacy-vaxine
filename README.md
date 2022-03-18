@@ -19,9 +19,9 @@ Applications built on top of Vaxine offer:
 
 Vaxine is divided in three main components:
 
-- [Data:](https://github.com/vaxine-io/vaxine/blob/main/design/data.md) we provide a relational data-model with expressive querying capabilities. As a starting point, we're building on Ecto.
+- [Data:](https://github.com/vaxine-io/vaxine/blob/main/design/data.md) we provide a relational data-model with expressive querying capabilities.
 - [Reservations:](https://github.com/vaxine-io/vaxine/blob/main/design/reservations.md) Provides concurrency control mechanisms that can ensure data integrity with high availability. 
-- [Subscriptions:](https://github.com/vaxine-io/vaxine/blob/main/design/pub-sub.md) Stream replication changes with ordering guarantees, persistence and efficient payload propagation.
+- [Subscriptions:](https://github.com/vaxine-io/vaxine/blob/main/design/subscriptions.md) Stream replication changes with ordering guarantees, persistence and efficient payload propagation.
 
 
 Stay tuned as we improve this document with more details and instructions to install and deploy Vaxine.
